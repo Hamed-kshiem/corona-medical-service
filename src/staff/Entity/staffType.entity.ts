@@ -1,3 +1,4 @@
+import { ApiProperty } from '@nestjs/swagger';
 import { IsString, MaxLength, MinLength } from 'class-validator';
 import {
   BaseEntity,
@@ -12,6 +13,12 @@ export class StaffType extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
+  @ApiProperty({
+    description: 'staff type',
+    minimum: 1,
+    default: true,
+    type: String,
+  })
   @Column()
   @MinLength(1)
   @MaxLength(150)
