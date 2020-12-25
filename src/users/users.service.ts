@@ -8,7 +8,7 @@ export class UsersService {
   constructor(
     @InjectRepository(User) private readonly userRepository: Repository<User>,
   ) {}
-  private readonly users: User[] = [
+  private readonly defaultusers: User[] = [
     {
       id: 1,
       username: 'john',
@@ -22,6 +22,8 @@ export class UsersService {
   ];
 
   async findOne(username: string): Promise<User | undefined> {
-    return this.users.find((user) => user.username === username);
+    return this.userRepository.findOne({ username: username });
+
+    // return this.users.find((user) => user.username === username);
   }
 }
