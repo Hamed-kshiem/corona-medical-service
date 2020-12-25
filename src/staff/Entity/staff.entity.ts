@@ -110,6 +110,7 @@ export class Staff extends BaseEntity {
   })
   @OneToMany(() => Education, (education: Education) => education.staff, {
     eager: true,
+    onDelete: 'CASCADE',
   })
   @JoinColumn({ name: 'id' })
   education: Education[];

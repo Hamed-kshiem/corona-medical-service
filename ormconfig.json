@@ -1,10 +1,11 @@
 {
     "type": "mysql",
-    "host": "localhost",
+    "host": "mysqlstaff.mysql.database.azure.com",
     "port": 3306,
-    "username": "root",
-    "password": "admin",
+    "username": "hamed@mysqlstaff",
+    "password": "SEKV2020#",
     "database": "corona",
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true
+    "synchronize": true,
+    "ssl": true
 }

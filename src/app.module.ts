@@ -6,9 +6,11 @@ import { StaffController } from './staff/staff.controller';
 import { StaffService } from './staff/staff.service';
 
 import { StaffModule } from './staff/staff.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), StaffModule],
+  imports: [TypeOrmModule.forRoot(), StaffModule, AuthModule, UsersModule],
   controllers: [AppController, StaffController],
   providers: [AppService],
 })
