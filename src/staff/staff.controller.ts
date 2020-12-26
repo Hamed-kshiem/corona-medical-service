@@ -10,6 +10,7 @@ import {
   Param,
   Post,
   Put,
+  UseGuards,
 } from '@nestjs/common';
 import {
   ApiBody,
@@ -21,6 +22,7 @@ import {
   getSchemaPath,
 } from '@nestjs/swagger';
 import { get } from 'http';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @ApiTags('staff')
 @Controller('staff')
@@ -45,6 +47,7 @@ export class StaffController {
   @ApiInternalServerErrorResponse({
     description: 'Internal server error',
   })
+  @UseGuards(JwtAuthGuard)
   @Get()
   findAll() {
     return this.staffService.findAll();
