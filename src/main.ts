@@ -14,6 +14,7 @@ async function bootstrap() {
       'Verwalten von medizinischem Personal (Ärzte, Pfleger, …) für die Betreuung von CoronaPatienten, Betreuungseinrichtung, Ausfälle (Corona-Erkrankung), ...',
     )
     .setVersion('1.0')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('swagger', app, document);

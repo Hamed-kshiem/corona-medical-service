@@ -19,7 +19,7 @@ export class Staff extends BaseEntity {
   id: number;
 
   @ApiProperty({
-    description: 'The age of a cat',
+    description: 'user name',
     minimum: 1,
     default: 'neme goes here',
     type: String,

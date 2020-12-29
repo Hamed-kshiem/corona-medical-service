@@ -13,6 +13,7 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import {
+  ApiBearerAuth,
   ApiBody,
   ApiCreatedResponse,
   ApiInternalServerErrorResponse,
@@ -25,6 +26,7 @@ import { get } from 'http';
 import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @ApiTags('staff')
+@ApiBearerAuth()
 @Controller('staff')
 export class StaffController {
   constructor(private staffService: StaffService) {}
