@@ -1,0 +1,11 @@
+{
+    "type": "mysql",
+    "host": "staffdatabase.mysql.database.azure.com",
+    "port": 3306,
+    "username": "hamed@staffdatabase",
+    "password": "SEKV2020#",
+    "database": "corona",
+    "entities": ["dist/**/*.entity{.ts,.js}"],
+    "synchronize": true,
+    "ssl": true
+}
